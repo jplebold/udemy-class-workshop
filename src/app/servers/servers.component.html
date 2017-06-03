@@ -1,3 +1,9 @@
 <p>this is my list of servers</p>
 <app-server></app-server>
 <app-server></app-server>
+<!--
+  below, we are doing property binding. disabled is a property of the html element button.
+  Wrapping it in [square brackets] marks it as a prop for binding, and then following with
+  ="XXX" where XXX is a property of the underlying component hooks it up to the component.
+-->
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
