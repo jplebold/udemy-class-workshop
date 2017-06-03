@@ -1,10 +1,21 @@
 <p>this is my list of servers</p>
 <app-server></app-server>
 <app-server></app-server>
+<label>Server Name</label>
+<!--
+  this text field uses event binding, when (each keystroke? yes, turns out each keystroke
+  triggers this event) text is entered it will
+  execute the onUpdateServerName. the $event is a special variable that the (DOM?)
+  creates which contains data about the event, in this case keystrokes. FYI, the
+  button down below also has an $event var, which we could potentially pass to the
+  bound method.
+-->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
 <!--
   below, we are doing property binding. disabled is a property of the html element button.
   Wrapping it in [square brackets] marks it as a prop for binding, and then following with
   ="XXX" where XXX is a property of the underlying component hooks it up to the component.
+  we are also doing Event Binding. (click) is binding to the onClick html event of button.
 -->
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <!--
