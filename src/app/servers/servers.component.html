@@ -10,7 +10,12 @@
   button down below also has an $event var, which we could potentially pass to the
   bound method.
 -->
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<!--
+  this text field uses two-way-binding. not sure yet what ngModel is really doing, and
+  how it knows we are binding to the onInput property...
+-->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
 <!--
   below, we are doing property binding. disabled is a property of the html element button.
   Wrapping it in [square brackets] marks it as a prop for binding, and then following with
