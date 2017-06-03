@@ -6,4 +6,14 @@
   Wrapping it in [square brackets] marks it as a prop for binding, and then following with
   ="XXX" where XXX is a property of the underlying component hooks it up to the component.
 -->
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<!--
+  below the two <p>'s render the same. First one uses string interpolation to get the value
+  of allowNewServer. Second one uses property binding, having bound to <p>'s html property
+  'innerText' and linking it to allowNewServer.
+-->
+<p>{{ allowNewServer }}</p>
+<hr />
+<p [innerText]="allowNewServer">will this show up? turns out no it will not.</p>
+<hr />
+<p>{{ serverCreationStatus }}</p>
